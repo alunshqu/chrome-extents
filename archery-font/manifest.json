@@ -1,0 +1,32 @@
+{
+	"name": "修改字体",
+	"version": "1.0",
+	"manifest_version": 3,
+	"description": "修改字体。",
+	"icons": {},
+	"background": {
+		
+	},
+	"permissions": [
+		"tabs",
+		"bookmarks",
+		"scripting",
+		"activeTab",
+		"storage"
+	],
+	"action": {},
+	"host_permissions": [
+		"http://sqldss.casstime.net:9123/sqlquery/"
+	],
+	"content_scripts": [
+		{
+			"matches": [
+				"http://sqldss.casstime.net:9123/sqlquery/"
+			],
+			"js": [
+				"js/jquery.js","js/myscript.js"
+			],
+			"run_at": "document_idle"
+		}
+	]
+}

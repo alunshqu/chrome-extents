@@ -1,0 +1,32 @@
+{
+	"name": "我的扩展程序",
+	"version": "2.1",
+	"manifest_version": 3,
+	"description": "从Google获得信息。",
+	"icons": {},
+	"background": {
+		"service_worker": "bg.js"
+	},
+	"permissions": [
+		"tabs",
+		"bookmarks",
+		"scripting",
+		"activeTab",
+		"storage"
+	],
+	"action": {},
+	"host_permissions": [
+		"https://weread.qq.com/"
+	],
+	"content_scripts": [
+		{
+			"matches": [
+				"https://weread.qq.com/*"
+			],
+			"js": [
+				"js/jquery.js","js/myscript.js"
+			],
+			"run_at": "document_idle"
+		}
+	]
+}
